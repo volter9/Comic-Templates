@@ -1,6 +1,6 @@
 /* Main Styles */
 body {
-	font-family: Tahoma, Helvetica, Arial;
+	font-family: 'Open Sans', Tahoma, Helvetica, Arial;
 	-webkit-text-size-adjust: 100%;
 	
 	margin: 0px;
@@ -33,8 +33,27 @@ h5, h6 {
 }
 
 a {
-	color: inherit;
+	color: #3d81e5;
 	text-decoration: none;
+}
+
+.clearfix:after {
+	content: "";
+	font-size: 0px;
+	visibility: hidden;
+	
+	clear: both;
+	display: block;
+	height: 0px;
+	width: 100%;
+}
+	
+.clearfix .left {
+	float: left;
+}
+	
+.clearfix .right {
+	float: right;
 }
 
 /* Main styles */
@@ -49,15 +68,15 @@ body > header {
 	height: 500px;
 }
 
-#wrapper > article,
-body > footer > section {
+body > footer > section,
+.fluid {
 	box-sizing: border-box;
 	margin: 0px auto;
 	width: 960px;
 }
 
 body > header nav {
-	background: rgba(0,0,0,0.3);
+	/* background: rgba(0,0,0,0.3); */
 	
 	height: 40px;
 	padding: 0px 20px;
@@ -78,7 +97,11 @@ body > header nav > .right > ul > li {
 	top: 0px;
 	left: 0px;
 	
-	display: inline-block;	
+	float: left;
+}
+
+body > header nav > .right > ul > li.active {
+	border-bottom: 2px solid #3d81e5 !important;
 }
 
 body > header nav > .right > ul > li > a {
@@ -99,20 +122,23 @@ body > header nav > .right > ul li a {
 }
 
 body > header nav > .right > ul > li:hover {
-	background: rgba(0,0,0,0.5);
+	/* background: rgba(0,0,0,0.5); */
+	border-bottom: 2px solid #b9cae6;
 }
 
 body > header nav > .right > ul li:hover ul {
 	display: block;
 	position: absolute;
-	top: 40px;
+	top: 41px;
 }
 
 body > header nav > .right > ul > li ul {
 	background: rgba(0,0,0,0.5);
 	
+	box-sizing: border-box;
 	display: none;
 	padding: 5px;
+	width: 100%;
 }
 
 body > header nav > .right > ul > li ul > li {
@@ -166,26 +192,19 @@ body > header > section > section p {
 /* Main */
 
 #wrapper {
-	position: relative;
 	
-	margin-top: -40px;
-	margin-bottom: -40px;
-	
-	z-index: 1;
 }
 
 #wrapper > article {
 	background-color: #fff;
-	box-shadow: 0px 0px 20px #888;
-	
-	padding: 20px;
 }
 
 #wrapper > article h2 {
-	font-size: 20px;
+	font-size: 28px;
+	font-weight: bold;
 	
 	margin: 0px;
-	margin-bottom: 20px;
+	margin-bottom: 1em;
 }
 
 #wrapper > article blockquote {
@@ -193,6 +212,7 @@ body > header > section > section p {
 	font-size: 14px;
 	
 	margin: 0px;
+	margin-bottom: 2em;
 	padding: 8px 16px;
 }
 
@@ -204,6 +224,9 @@ body > header > section > section p {
 #wrapper > article p {
 	font-size: 14px;
 	line-height: 175%;
+	
+	margin: 0px;
+	margin-bottom: 2em;
 }
 
 #wrapper > article ul {
@@ -215,6 +238,81 @@ body > header > section > section p {
 	font-size: 12px;
 	
 	padding: 5px 0px;
+}
+
+/* Landing page stuff */
+
+#wrapper .row {
+	border-bottom: 1px solid #eee;
+	
+	padding-top: 40px;
+	padding-bottom: 30px;
+}
+
+#wrapper .row:nth-child(even) {
+	background-color: #fcfcfd;
+}
+
+/* Haha! Happy debugging! */
+
+#wrapper .row.double-row .left {
+	float: right;
+	width: 74%;
+}
+
+#wrapper .row.double-row .right {
+	float: left;
+	width: 26%;
+}
+
+#wrapper .row.double-row.inverted .right {
+	float: right;
+	width: 30%;
+}
+
+#wrapper .row.double-row.inverted .left {
+	float: left;
+	width: 70%;
+}
+
+/* Reasons */
+
+#wrapper > article ul.reasons {
+	list-style: none;
+	
+	padding: 0px;
+	margin: 0px;
+}
+
+#wrapper > article ul.reasons li {
+	box-sizing: border-box;
+	float: left;
+	padding: 0px 4%;
+	margin-bottom: 30px;
+	width: 50%;
+}
+
+#wrapper > article ul.reasons li i.fa {
+	color: #3d81e5;
+	font-size: 1.5em;
+	text-align: center;
+	
+	margin-right: 10px;
+	width: 1em;
+}
+
+#wrapper > article ul.reasons li.first {
+	clear: both;
+}
+
+#wrapper > article ul.reasons li h2 {
+	font-size: 18px;
+	vertical-align: top;
+	font-weight: normal;
+}
+
+#wrapper > article ul.reasons li p {
+	font-size: 14px;
 }
 
 /* Reviews & Products  */
@@ -238,95 +336,88 @@ body > header > section > section p {
 	vertical-align: top;
 }
 
-#wrapper > article ul.products {
-	margin-bottom: 20px;
-	margin-top: 20px;
-}
-
 #wrapper > article ul.products li {
-	position: relative;
-	top: 0px;
-	left: 0px;	
-	
-	max-height: 180px;
-	overflow: hidden;
-	padding: 0px 10px;
+	box-sizing: border-box;
+	padding: 0px 0px;
 	width: 33%;
 }
 
-#wrapper > article ul.products li:hover section {
-	transform: translateY(-150px);
-}
-
 #wrapper > article ul.products img {
-	display: block;
-	margin: 0px auto;
-	max-width: 100%;
-	max-height: 180px;
+	float: left;
+	width: 100%;
 }
 
-#wrapper > article ul.products section {
-	color: #fff;
-	background: rgba(0,0,0,0.6);
-	text-align: center;
-	
-	transform: translateY(0px);
-	transition: transform 0.5s;
-	-webkit-transition: transform 0.5s;
-	-moz-transition: transform 0.5s;
-	
-	position: absolute;
-	top: 150px;
-	left: 0px;
-	
+#wrapper > article ul.products li section {
+	box-sizing: border-box;
+	float: right;
 	height: 180px;
 	margin: 0px;
-	padding: 5px;
+	padding: 0px 10px;
+	width: 100%;
 }
 
 #wrapper > article ul.products section p {
 	font-size: 12px;
 	text-align: left;
 	
-	padding: 0px 10px;
+	margin-bottom: 1em;
 }
 
 #wrapper > article ul.products section h3 {
-	margin: 0px;
+	border-bottom: 1px solid #ddd;
+	font-size: 16px;
+	
+	margin-top: 0px;
+	padding-bottom: 8px;
 }
 
+#wrapper > article ul.products section h3 small {
+	color: #aaa;
+	font-size: 12px;
+	width: auto !important;
+}
+
+/* Reviews */
+
 #wrapper > article ul.reviews li {
-	background-color: #f8f8f8;
+	/* background-color: #f8f8f8; */
 	
-	box-shadow: 0px 0px 10px #666;
-	margin: 20px 4%;
-	padding-bottom: 10px;
-	
-	width: 25%;
+	box-sizing: border-box;
+	padding-bottom: 10px;	
+	width: 33%;
+}
+
+#wrapper > article ul.reviews li:nth-child(1) {
+	padding-right: 10px;
+}
+
+#wrapper > article ul.reviews li:nth-child(2) {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#wrapper > article ul.reviews li:nth-child(3) {
+	padding-left: 10px;
 }
 
 #wrapper > article ul.reviews li p {
-	font-size: 12px;
+	font-size: 13px;
 	text-align: left;
 	
-	padding: 0px 8px;
+	margin-bottom: 1em;
+	padding: 0px 10px;
 }
 
 #wrapper > article ul.reviews .border {
+	background-size: cover;
+	
 	box-sizing: border-box;
 	display: block;
 	height: 140px;
 	margin: 0px auto;
 	margin-bottom: 10px;
 	overflow: hidden;
-	height: 200px;
-	width: 100%;
-}
-
-#wrapper > article ul.reviews .farmer {
-	background-size: cover;
-	
-	height: 200px;
+	padding-top: 100%;
 	width: 100%;
 }
 
@@ -350,6 +441,8 @@ body > header > section > section p {
 
 #wrapper > article ul.reviews li p.name {
 	color: #aaa;
+	font-size: 12px;
+	text-align: right;
 	
 	margin-bottom: 0px;
 }
@@ -365,9 +458,8 @@ body > header > section > section p {
 	font-size: 14px;
 	text-align: center;
 	
-	display: block;
-	margin: 0px auto;
 	margin-top: 20px;
+	margin-right: 20px;
 	padding: 15px 30px;
 	width: 280px;
 }
@@ -458,6 +550,10 @@ body > footer > section p.policy-shit a {
 	
 	body > header nav > .right > ul > li:hover ul {
 		display: none;
+	}
+	
+	#wrapper > article ul.reasons li {
+		width: 100%;
 	}
 	
 	#wrapper > article ul.products li {
