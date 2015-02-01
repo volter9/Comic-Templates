@@ -640,6 +640,7 @@ body > footer > section p.policy-shit a {
 		width: 100%;
 	}
 	
+	#wrapper article .row ul.reasons li,
 	#wrapper article .row ul.products li,
 	#wrapper article .row ul.reviews li {
 		width: 100%;
