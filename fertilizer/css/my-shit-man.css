@@ -82,6 +82,10 @@ body > header nav {
 	padding: 0px 20px;
 }
 
+body > header nav input {
+	display: none;
+}
+
 #logo {
 	padding-top: 8px;
 }
@@ -101,7 +105,7 @@ body > header nav > .right > ul > li {
 }
 
 body > header nav > .right > ul > li.active {
-	border-bottom: 2px solid #3d81e5 !important;
+	border-bottom: 2px solid #3d81e5;
 }
 
 body > header nav > .right > ul > li > a {
@@ -516,58 +520,123 @@ body > footer > section p.policy-shit a {
 
 /* Mobile shit */
 
+/**
+ * Need to update that.
+ */
+
 @media only screen and (max-width: 960px) {
-	#wrapper > article,
-	body > header > section,
-	body > footer > section {
-		box-sizing: border-box;
-		width: 100%;
-	}
-	
-	#wrapper {
-		margin: 0px;
-	}
-	
 	body > header {
 		height: 300px;
 	}
 	
-	body > header > section > nav {
+	/**
+	 * Navigation
+	 */
+	
+	body > header nav {
+		background-color: rgba(0,0,0,0.4);
+		
+		height: auto;
 		padding: 0px;
 	}
 	
-	#logo {
-		padding-left: 10px;
+	body > header nav > * {
+		float: none;
 	}
 	
-	body > header nav > .right > ul > li > a {
-		padding: 10px 10px;
+	body > header nav #logo {
+		padding: 0px 20px;
+		padding-top: 8px;
 	}
 	
-	body > header nav > .right > ul > li a span {
+	body > header nav input {
+		background-color: transparent;
+		border: 1px solid rgba(0,0,0,0.8);
+		border-radius: 4px;
+		
+		float: right;
+		height: 20px;
+		margin: 8px 20px;
+		width: 20px;
+	}
+	
+	body > header nav input:checked + .right {
+		display: block;
+	}
+	
+	body > header nav > .right {
 		display: none;
-	}
-	
-	body > header nav > .right > ul > li:hover ul {
-		display: none;
-	}
-	
-	#wrapper > article ul.reasons li {
+		float: none;
 		width: 100%;
 	}
 	
-	#wrapper > article ul.products li {
+	body > header nav > .right ul {
+		float: none;
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	body > header nav > .right li {
+		border-bottom: 0px !important;
+		
+		float: none;
+		display: block;
 		width: 100%;
 	}
 	
-	#wrapper > article ul.reviews li {
-		width: 74%;
-		margin: 4px 13%;
-		margin-bottom: 20px;
+	body > header nav > .right li ul {
+		display: none !important;
 	}
 	
-	#wrapper > article ul.reviews .border,
-	#wrapper > article ul.reviews .farmer {
-		height: 300px;
+	/**
+	 * Main content
+	 */
+	
+	#wrapper article .row .fluid {
+		padding-left: 20px;
+		padding-right: 20px;
+		width: 100%;
 	}
+	
+	#wrapper article .row.double-row .left,
+	#wrapper article .row.double-row .right,
+	#wrapper article .row.double-row.inverted .left,
+	#wrapper article .row.double-row.inverted .right {
+		float: none;
+		width: 100%;
+	}
+	
+	#wrapper article .row ul.products li,
+	#wrapper article .row ul.reviews li {
+		width: 100%;
+	}
+	
+	.button {
+		box-sizing: border-box;
+		display: block;
+		width: 100%;
+	}
+	
+	/**
+	 * Footer
+	 */
+	
+	body > footer {
+		height: 200px;
+	}
+	
+	body > footer section {
+		width: 100%;
+	}
+}
+
+#pixel {
+	cursor: pointer;
+	
+	position: absolute;
+	top: 40px;
+	left: 0px;
+	
+	width: 40px;
+	height: 40px;
 }
