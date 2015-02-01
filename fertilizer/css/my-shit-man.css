@@ -554,6 +554,7 @@ body > footer > section p.policy-shit a {
 		border: 1px solid rgba(0,0,0,0.8);
 		border-radius: 4px;
 		
+		display: initial;
 		float: right;
 		height: 20px;
 		margin: 8px 20px;
