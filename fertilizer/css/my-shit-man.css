@@ -646,6 +646,10 @@ body > footer > section p.policy-shit a {
 		width: 100%;
 	}
 	
+	#wrapper article .row ul.reasons li {
+		padding: 0px 2%;
+	}
+	
 	.button {
 		box-sizing: border-box;
 		display: block;
