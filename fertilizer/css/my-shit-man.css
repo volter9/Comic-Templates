@@ -37,6 +37,11 @@ a {
 	text-decoration: none;
 }
 
+a:hover {
+	color: #4c8bfa;
+	text-decoration: underline;	
+}
+
 .clearfix:after {
 	content: "";
 	font-size: 0px;
@@ -79,7 +84,10 @@ body > header nav {
 	/* background: rgba(0,0,0,0.3); */
 	
 	height: 40px;
+	margin: 0px auto;
 	padding: 0px 20px;
+	padding-top: 40px;
+	width: 80%;
 }
 
 body > header nav input {
@@ -105,7 +113,7 @@ body > header nav > .right > ul > li {
 }
 
 body > header nav > .right > ul > li.active {
-	border-bottom: 2px solid #3d81e5;
+	border-bottom: 2px solid #4c8bfa;
 }
 
 body > header nav > .right > ul > li > a {
@@ -128,6 +136,10 @@ body > header nav > .right > ul li a {
 body > header nav > .right > ul > li:hover {
 	/* background: rgba(0,0,0,0.5); */
 	border-bottom: 2px solid #b9cae6;
+}
+
+body > header nav > .right > ul > li > a {
+	text-decoration: none;
 }
 
 body > header nav > .right > ul li:hover ul {
@@ -230,7 +242,7 @@ body > header > section > section p {
 	line-height: 175%;
 	
 	margin: 0px;
-	margin-bottom: 2em;
+	margin-bottom: 1.5em;
 }
 
 #wrapper > article ul {
@@ -291,9 +303,8 @@ body > header > section > section p {
 #wrapper > article ul.reasons li {
 	box-sizing: border-box;
 	float: left;
-	padding: 0px 4%;
 	margin-bottom: 30px;
-	width: 50%;
+	width: 33%;
 }
 
 #wrapper > article ul.reasons li i.fa {
@@ -307,6 +318,21 @@ body > header > section > section p {
 
 #wrapper > article ul.reasons li.first {
 	clear: both;
+}
+
+#wrapper > article ul.reasons li:first-child + li,
+#wrapper > article ul.reasons li.first + li {
+	padding: 0px 2%;
+}
+
+#wrapper > article ul.reasons li:first-child,
+#wrapper > article ul.reasons li.first {
+	padding-right: 2%;
+}
+
+#wrapper > article ul.reasons li:first-child + li + li,
+#wrapper > article ul.reasons li.first + li + li {
+	padding-left: 2%;
 }
 
 #wrapper > article ul.reasons li h2 {
@@ -376,7 +402,7 @@ body > header > section > section p {
 }
 
 #wrapper > article ul.products section h3 small {
-	color: #aaa;
+	color: #4c8bfa;
 	font-size: 12px;
 	width: auto !important;
 }
@@ -462,10 +488,16 @@ body > header > section > section p {
 	font-size: 14px;
 	text-align: center;
 	
+	display: inline-block;
 	margin-top: 20px;
 	margin-right: 20px;
 	padding: 15px 30px;
-	width: 280px;
+}
+
+.button:hover {
+	background-color: #4c8bfa;
+	color: #fff;
+	text-decoration: none;
 }
 
 /* Footer */
@@ -538,6 +570,7 @@ body > footer > section p.policy-shit a {
 		
 		height: auto;
 		padding: 0px;
+		width: 100%;
 	}
 	
 	body > header nav > * {
